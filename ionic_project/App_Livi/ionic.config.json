@@ -1,0 +1,7 @@
+{
+  "name": "App_Livi",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
