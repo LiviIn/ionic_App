@@ -1,59 +1,32 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar mode="md">
     <ion-title color="dark">
       <span>Home</span>
-      <ion-icon name="chevron-down-outline"></ion-icon>
+      <ion-icon color="dark" name="chevron-down-outline"></ion-icon>
     </ion-title>
-
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <section class="slide_section">
-    <ion-slides pager="true" [options]="slideOption">
-      <ion-slide>
-        <div [ngStyle]="{'background-image':'url(' + 'assets/imge/food_01.jpg' +')'}"></div>
-      </ion-slide>
-      <ion-slide>
-        <div [ngStyle]="{'background-image':'url(' + 'assets/imge/food_02.jpg' +')'}"></div>
-      </ion-slide>
-      <ion-slide>
-        <div [ngStyle]="{'background-image':'url(' + 'assets/imge/food_03.jpg' +')'}"></div>
-      </ion-slide>
-    </ion-slides>
-  </section>
 
-  <ion-list>
-    <ion-list-header class="ion-margin-bottom"> 
+  <div *ngIf="isLoading"><ion-skeleton-text animated style="height: 25vh;"></ion-skeleton-text></div>
+  <app-loading-restaurant *ngIf="isLoading"></app-loading-restaurant>
+  
+  <app-banner *ngIf="!isLoading" [bannerImages]="banners"></app-banner>
+
+  <ion-list *ngIf="!isLoading">
+    <ion-list-header class="ion-margin-bottom">
       <ion-label>
         <h4>Restaurants Nearby</h4>
         <p>Discover unique tastes near you</p>
       </ion-label>
     </ion-list-header>
-
-    <ion-item>
-      <ion-thumbnail slot="start">
-        <img src="assets/imge/food_01.jpg">
-      </ion-thumbnail>
-      <ion-label>
-        <h4>Stayfit</h4>
-        <ion-text color="medium">
-          <p class="pStyle">
-            Italian, Mexican 
-          </p>
-        </ion-text>
-        <span>
-          <ion-icon name="star"></ion-icon>
-          5 .
-        </span>
-        25 mins . ₹100 for two
-        <ion-text color="tertiary">
-          <p class="distance">
-            2.59 kms away
-          </p>
-        </ion-text>
-      </ion-label>
-    </ion-item>
+    <ion-item-group *ngIf="restaurants?.length > 0">
+      <app-restaurant 
+        *ngFor="let restaurant of restaurants" 
+        [restaurant]="restaurant"
+        [routerLink]="['/', 'tabs', 'restaurants', restaurant.uid]"></app-restaurant>
+    </ion-item-group>
   </ion-list>
-  
+
 </ion-content>

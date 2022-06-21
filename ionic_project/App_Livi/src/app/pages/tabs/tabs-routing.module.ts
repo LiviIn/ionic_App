@@ -17,12 +17,12 @@ const routes: Routes = [
         loadChildren: () => import('./cart/cart.module').then( m => m.CartPageModule)
       },
       {
-        path: 'account',
-        loadChildren: () => import('./account/account.module').then( m => m.AccountPageModule)
-      },
-      {
         path: 'search',
         loadChildren: () => import('./search/search.module').then( m => m.SearchPageModule)
+      },
+      {
+        path: 'account',
+        loadChildren: () => import('./account/account.module').then( m => m.AccountPageModule)
       },
       {
         path: '',
@@ -30,6 +30,14 @@ const routes: Routes = [
         pathMatch: 'full'
       }
     ]
+  },
+  {
+    path: 'restaurants/:restaurantId',
+    loadChildren: () => import('./items/items.module').then( m => m.ItemsPageModule)
+  },
+  {
+    path: 'address',
+    loadChildren: () => import('./address/address.module').then( m => m.AddressPageModule)
   },
   
 ];
