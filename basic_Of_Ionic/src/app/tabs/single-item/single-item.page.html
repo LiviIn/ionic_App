@@ -9,4 +9,13 @@
 
 <ion-content>
 
+  <!--  navigate only one page back use back function -->
+  <ion-button (click)="navCtrl.back()">Go Back</ion-button>
+  <!-- jump a navigate a Root page use NavigateRoot -->
+  <ion-button (click)="navCtrl.navigateRoot('/tabs')">Navigate to Root</ion-button>
+  <!-- when pop a particular page use a pop function -->
+  <ion-button (click)="navCtrl.pop()">Pop</ion-button>
+  <!-- navigate a particular Route use navigateBack -->
+  <ion-button (click)="navCtrl.navigateBack('/tabs')">Navigate Back</ion-button>
+
 </ion-content>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab1',
@@ -10,7 +11,8 @@ export class Tab1Page {
   id = 1;
 
   constructor(
-    private router: Router
+    private router: Router,
+    public navCtrl: NavController
   ) {}
 
   redirect(){
@@ -22,7 +24,10 @@ export class Tab1Page {
       }
     }
     // use this Router Navigate to Extra Data:
-    this.router.navigate(['/', 'tabs', 'items', this.id],navData)
+    // this.router.navigate(['/', 'tabs', 'items', this.id],navData)
+
+    // use navController in control a navigation
+    this.navCtrl.navigateForward('/tabs/items/' + this.id,navData);
   }
 
 }
