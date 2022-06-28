@@ -32,7 +32,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'single-item',
+    path: 'items/:id',
     loadChildren: () => import('./single-item/single-item.module').then( m => m.SingleItemPageModule)
   }
 ];
