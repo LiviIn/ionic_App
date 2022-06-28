@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AlertController, LoadingController, ModalController, ToastController } from '@ionic/angular';
-import { threadId } from 'worker_threads';
+// import { threadId } from 'worker_threads';
 
 @Injectable({
   providedIn: 'root'
