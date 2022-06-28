@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NavController } from '@ionic/angular';
 
@@ -7,7 +7,7 @@ import { NavController } from '@ionic/angular';
   templateUrl: './single-item.page.html',
   styleUrls: ['./single-item.page.scss'],
 })
-export class SingleItemPage implements OnInit {
+export class SingleItemPage implements OnInit, OnDestroy {
 
   id: any;
 
@@ -17,6 +17,7 @@ export class SingleItemPage implements OnInit {
     ) { }
 
   ngOnInit() {
+    console.log('SingleItemPage ngOnInit')
     // use the ActivatedRoute get the Active route paramID
     this.id = this.route.snapshot.paramMap.get('id');
 
@@ -30,7 +31,26 @@ export class SingleItemPage implements OnInit {
       // Const id = currentObj.id
       console.log("name: ",Name, "id: ",ID)
     }
-
   }
 
+  ionViewWillEnter(){
+    console.log('SingleItemPage ionViewWillEnter')
+  }
+
+
+  ionViewDidEnter(){
+    console.log('SingleItemPage ionViewDidEnter')
+  }
+
+  ionViewWillLeave(){
+    console.log('SingleItemPage ionViewWillLeave')
+  }
+
+  ionViewDidLeave(){
+    console.log('SingleItemPage ionViewDidLeave')
+  }
+
+  ngOnDestroy(): void {
+    console.log('SingleItemPage ngOnDestroy')
+  }
 }
