@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-single-item',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SingleItemPage implements OnInit {
 
-  constructor() { }
+  id: any;
+
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+    // use the ActivatedRoute get the Active route paramID
+    this.id = this.route.snapshot.paramMap.get('id');
+
+    // use to getting the Active route ParamsData
+    const data = this.route.snapshot.queryParams
+    console.log("queryParams: ", data);
+    if(data?.data) {
+      const currentObj = JSON.parse(data.data);
+      const Name = currentObj.name
+      const ID = currentObj.id
+      // Const id = currentObj.id
+      console.log("name: ",Name, "id: ",ID)
+    }
+
   }
 
 }

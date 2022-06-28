@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavigationExtras, Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab1',
@@ -8,6 +9,20 @@ import { Component } from '@angular/core';
 export class Tab1Page {
   id = 1;
 
-  constructor() {}
+  constructor(
+    private router: Router
+  ) {}
+
+  redirect(){
+    // this.router.navigateByUrl('/tabs/tab1/item', {replaceUrl: true})
+    const data = {name: "abc", id: this.id}
+    const navData: NavigationExtras = {
+      queryParams: {
+        data: JSON.stringify(data)
+      }
+    }
+    // use this Router Navigate to Extra Data:
+    this.router.navigate(['/', 'tabs', 'items', this.id],navData)
+  }
 
 }

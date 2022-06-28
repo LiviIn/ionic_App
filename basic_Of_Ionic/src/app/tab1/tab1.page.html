@@ -22,5 +22,7 @@
   <!-- <a href="/tabs/tab1/item" routerDirection="forward"> Redirect to Item Pages </a> -->
   <!-- using href the page get a reloading time -->
   <!-- dynamic Routing use easy to add dynamic content ex: params ID-->
-  <a [routerLink]="['/', 'tabs','items', id]" routerDirection="forward">Redirect to Item Pages</a>
+  <!-- <a [routerLink]="['/', 'tabs','items', id]" routerDirection="forward">Redirect to Item Pages</a> -->
+  <!-- Route redirect to use Click Event -->
+  <a (click)="redirect()">Redirect To Use Click</a>
 </ion-content>
