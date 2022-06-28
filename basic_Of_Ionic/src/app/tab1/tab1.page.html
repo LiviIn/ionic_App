@@ -15,7 +15,10 @@
 
   <app-explore-container name="Tab 1 page"></app-explore-container>
   <!-- <a routerLink="/tabs/single-item" routerDirection="forward">Redirect to Single Item Pages</a> -->
-  <!-- <a routerLink="item" routerDirection="forward">Redirect to Item Pages</a> -->
+  <ion-button routerLink="item" routerDirection="forward" color="danger" class="ion-padding">
+    Redirect to Item Pages
+  </ion-button>
+  
   <!-- dynamic Routing -->
   <!-- <a [routerLink]="['/', 'tabs', 'tab1', 'item']" routerDirection="forward">Redirect to Item Pages</a> -->
   <!-- use href -->
@@ -24,5 +27,7 @@
   <!-- dynamic Routing use easy to add dynamic content ex: params ID-->
   <!-- <a [routerLink]="['/', 'tabs','items', id]" routerDirection="forward">Redirect to Item Pages</a> -->
   <!-- Route redirect to use Click Event -->
-  <a (click)="redirect()">Redirect To Use Click</a>
+  <ion-button (click)="redirect()" color="tertiary" class="ion-padding">
+    Redirect To Use Click
+  </ion-button>
 </ion-content>

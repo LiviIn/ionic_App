@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/services/api/api.service';
 
 @Component({
   selector: 'app-item',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemPage implements OnInit {
 
-  constructor() { }
+  items: any[] = [];
+
+  constructor(
+    public apiService: ApiService
+  ) { }
 
   ngOnInit() {
+    console.log('ngOnInit')
+    this.items = this.apiService.getItems()
   }
 
 }

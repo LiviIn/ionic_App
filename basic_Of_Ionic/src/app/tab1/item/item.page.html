@@ -5,5 +5,13 @@
 </ion-header>
 
 <ion-content>
-
+  <ion-list *ngIf = "items?.length > 0">
+    <ion-item *ngFor="let item of items" [routerLink] = "['/', 'tabs', 'tab1', 'item', item.id]">
+      <ion-label>
+        {{item.name}}
+        <p>{{item.description}}</p>
+      </ion-label>
+      <ion-text slot="end">${{item.price}}</ion-text>
+    </ion-item>
+  </ion-list>
 </ion-content>
