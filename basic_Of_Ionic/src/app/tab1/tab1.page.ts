@@ -10,14 +10,19 @@ import { NavController } from '@ionic/angular';
 export class Tab1Page implements OnInit, OnDestroy {
   id = 1;
 
-  constructor(
-    private router: Router,
-    public navCtrl: NavController
-  ) {}
-
+  
   ngOnInit(): void {
     console.log('Tab1Page ngOnInit')
   }
+
+  constructor(
+    private router: Router,
+    public navCtrl: NavController
+  ) {
+    console.log('Tab1 page constructor')
+  }
+
+  
 
   ionViewWillEnter(){
     console.log('Tab1Page ionViewWillEnter')

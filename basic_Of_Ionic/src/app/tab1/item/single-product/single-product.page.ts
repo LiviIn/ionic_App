@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Product } from 'src/app/interfaces/product.interface';
 import { ApiService } from 'src/app/services/api/api.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { ApiService } from 'src/app/services/api/api.service';
 })
 export class SingleProductPage implements OnInit {
 
-  item: any;
+  item: Product;
 
   constructor(
     private route: ActivatedRoute,

@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Product } from 'src/app/models/product.model';
+// import { Product } from 'src/app/interfaces/product.interface';
 
 
 @Injectable({
@@ -6,25 +8,30 @@ import { Injectable } from '@angular/core';
 })
 export class ApiService {
 
-  items: any[] = [
-    {
-      id: 1,
-      name: 'product1',
-      description: 'Lorem Lorem',
-      price: 20
-    },
-    {
-      id: 2,
-      name: 'product2',
-      description: 'Lorem Lorem',
-      price: 30
-    },
-    {
-      id: 3,
-      name: 'product2',
-      description: 'Lorem Lorem',
-      price: 25
-    }
+  items: Product[] = [
+    new Product(1, 'p', 'Lorem Lorem', 20 ), // when use a Model the value will assign in constructor 
+                                            // so the new key will assign a new product not use key values
+    // {
+    //   id: 1,                             // when use a interface the not use constructor 
+                                            // the interface is a subset of module
+    //   name: 'product1',
+    //   description: 'Lorem Lorem',
+    //   price: 20
+    // },
+    new Product(3, 'p', 'Lorem Lorem', 30 ),
+    new Product(2, 'p', 'Lorem Lorem', 25 )
+    // {
+    //   id: 2,
+    //   name: 'product2',
+    //   description: 'Lorem Lorem',
+    //   price: 30
+    // },
+    // {
+    //   id: 3,
+    //   name: 'product2',
+    //   description: 'Lorem Lorem',
+    //   price: 25
+    // }
   ]
 
   constructor() { }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from 'src/app/interfaces/product.interface';
 import { ApiService } from 'src/app/services/api/api.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { ApiService } from 'src/app/services/api/api.service';
 })
 export class ItemPage implements OnInit {
 
-  items: any[] = [];
+  items: Product[] = [];
 
   constructor(
     public apiService: ApiService
