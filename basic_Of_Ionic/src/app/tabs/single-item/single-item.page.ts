@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NavController } from '@ionic/angular';
@@ -10,10 +11,12 @@ import { NavController } from '@ionic/angular';
 export class SingleItemPage implements OnInit, OnDestroy {
 
   id: any;
+  data = {};
 
   constructor(
     private route: ActivatedRoute,
-    private navCtrl: NavController
+    private navCtrl: NavController,
+    public http: HttpClient
     ) { }
 
   ngOnInit() {
@@ -21,6 +24,8 @@ export class SingleItemPage implements OnInit, OnDestroy {
     // use the ActivatedRoute get the Active route paramID
     this.id = this.route.snapshot.paramMap.get('id');
     console.log("queryParams: ", this.id);
+    this.getSingleData(this.id);
+   
     // use to getting the Active route ParamsData
     // const data = this.route.snapshot.queryParams
     
@@ -32,6 +37,17 @@ export class SingleItemPage implements OnInit, OnDestroy {
     //   console.log("name: ",Name, "id: ",ID)
     // }
   }
+
+  getSingleData(id){
+    this.http.get<any>('https://jsonplaceholder.typicode.com/todos/'+ id).subscribe(data => {
+      console.log('getData: ', data);
+      this.data = data;
+      
+    }, err => {
+      console.log(err)
+    })
+  }
+
   ngOnDestroy(): void {
     console.log('SingleItemPage ngOnDestroy')
   }

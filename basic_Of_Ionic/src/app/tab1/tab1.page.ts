@@ -36,16 +36,8 @@ export class Tab1Page implements OnInit, OnDestroy {
   }
 
   singleData(id){
-    console.log('enter Click Function')
-    this.http.get<any>('https://jsonplaceholder.typicode.com/todos/'+ id).subscribe(data => {
-      console.log('getData: ', data);
-      // this.data = data;
-      this.navCtrl.navigateForward('/tabs/items/' + data.id);
-    }, err => {
-      console.log(err)
-    })
-    
-    
+    console.log('enter Click Function')    
+    this.navCtrl.navigateForward('/tabs/items/' + id);
   }
 
   // getSingleData(id){

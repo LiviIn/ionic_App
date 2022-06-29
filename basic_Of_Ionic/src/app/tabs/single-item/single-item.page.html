@@ -18,4 +18,12 @@
   <!-- navigate a particular Route use navigateBack -->
   <ion-button (click)="navCtrl.navigateBack('/tabs')">Navigate Back</ion-button>
 
+  <ion-item >
+    <ion-label>
+      {{data?.title}}
+      <p>{{data?.id}}</p>
+    </ion-label>
+    <ion-text slot="end">${{data?.userId}}</ion-text>
+  </ion-item>
+
 </ion-content>
