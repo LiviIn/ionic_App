@@ -20,37 +20,38 @@ export class SingleItemPage implements OnInit, OnDestroy {
     console.log('SingleItemPage ngOnInit')
     // use the ActivatedRoute get the Active route paramID
     this.id = this.route.snapshot.paramMap.get('id');
-
+    console.log("queryParams: ", this.id);
     // use to getting the Active route ParamsData
-    const data = this.route.snapshot.queryParams
-    console.log("queryParams: ", data);
-    if(data?.data) {
-      const currentObj = JSON.parse(data.data);
-      const Name = currentObj.name
-      const ID = currentObj.id
-      // Const id = currentObj.id
-      console.log("name: ",Name, "id: ",ID)
-    }
+    // const data = this.route.snapshot.queryParams
+    
+    // if(data?.data) {
+    //   const currentObj = JSON.parse(data.data);
+    //   const Name = currentObj.name
+    //   const ID = currentObj.id
+    //   // Const id = currentObj.id
+    //   console.log("name: ",Name, "id: ",ID)
+    // }
   }
-
-  ionViewWillEnter(){
-    console.log('SingleItemPage ionViewWillEnter')
-  }
-
-
-  ionViewDidEnter(){
-    console.log('SingleItemPage ionViewDidEnter')
-  }
-
-  ionViewWillLeave(){
-    console.log('SingleItemPage ionViewWillLeave')
-  }
-
-  ionViewDidLeave(){
-    console.log('SingleItemPage ionViewDidLeave')
-  }
-
   ngOnDestroy(): void {
     console.log('SingleItemPage ngOnDestroy')
   }
+
+  // ionViewWillEnter(){
+  //   console.log('SingleItemPage ionViewWillEnter')
+  // }
+
+
+  // ionViewDidEnter(){
+  //   console.log('SingleItemPage ionViewDidEnter')
+  // }
+
+  // ionViewWillLeave(){
+  //   console.log('SingleItemPage ionViewWillLeave')
+  // }
+
+  // ionViewDidLeave(){
+  //   console.log('SingleItemPage ionViewDidLeave')
+  // }
+
+  
 }

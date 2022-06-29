@@ -30,4 +30,11 @@
   <ion-button (click)="redirect()" color="tertiary" class="ion-padding">
     Redirect To Use Click
   </ion-button>
+
+  <ion-title class="ion-padding ">Fetch All Data</ion-title>
+  <ion-list *ngIf = "data?.length > 0">
+    <ion-item *ngFor="let item of data">
+      <ion-label (click)="singleData(item.id)">{{item?.title}}</ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
