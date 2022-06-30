@@ -19,6 +19,7 @@ export class SearchPage implements OnInit {
   restaurants: any[] = [];
   allRestaurants: any[] = [
     {
+      uid: '12hkjhusapasta',
       cover: 'assets/imgs/pasta.jpg',
       name: 'Pasta',
       short_name: 'pasta',
@@ -29,6 +30,7 @@ export class SearchPage implements OnInit {
       price: 100
     },
     {
+      uid: '12hkjhusapizza',
       cover: 'assets/imgs/pizza.jpg',
       name: 'Pizza',
       short_name: 'pizza',
@@ -39,6 +41,7 @@ export class SearchPage implements OnInit {
       price: 100
     },
     {
+      uid: '12hkjhusasalad',
       cover: 'assets/imgs/salad.jpg',
       name: 'Salad',
       short_name: 'salad',

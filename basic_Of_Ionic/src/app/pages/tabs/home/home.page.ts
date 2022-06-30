@@ -22,9 +22,10 @@ export class HomePage implements OnInit {
       ]
       this.restaurants =[
         {
+          uid: '12hkjhusapasta',
           cover: 'assets/imgs/pasta.jpg',
           name: 'Pasta',
-          short_name: 'Pasta',
+          short_name: 'pasta',
           cuisines: ['Italian', 'Mexican'],
           rating: 5,
           delivery_time: 25,
@@ -32,9 +33,10 @@ export class HomePage implements OnInit {
           price: 100
         },
         {
+          uid: '12hkjhusapizza',
           cover: 'assets/imgs/pizza.jpg',
           name: 'Pizza',
-          short_name: 'Pizza',
+          short_name: 'pizza',
           cuisines: ['Italian', 'Mexican'],
           rating: 5,
           delivery_time: 25,
@@ -42,9 +44,10 @@ export class HomePage implements OnInit {
           price: 100
         },
         {
+          uid: '12hkjhusasalad',
           cover: 'assets/imgs/salad.jpg',
           name: 'Salad',
-          short_name: 'Salad',
+          short_name: 'salad',
           cuisines: ['Italian', 'Mexican'],
           rating: 5,
           delivery_time: 25,
