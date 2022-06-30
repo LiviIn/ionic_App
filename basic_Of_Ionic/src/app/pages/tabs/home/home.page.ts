@@ -24,6 +24,7 @@ export class HomePage implements OnInit {
         {
           cover: 'assets/imgs/pasta.jpg',
           name: 'Pasta',
+          short_name: 'Pasta',
           cuisines: ['Italian', 'Mexican'],
           rating: 5,
           delivery_time: 25,
@@ -33,6 +34,7 @@ export class HomePage implements OnInit {
         {
           cover: 'assets/imgs/pizza.jpg',
           name: 'Pizza',
+          short_name: 'Pizza',
           cuisines: ['Italian', 'Mexican'],
           rating: 5,
           delivery_time: 25,
@@ -42,6 +44,7 @@ export class HomePage implements OnInit {
         {
           cover: 'assets/imgs/salad.jpg',
           name: 'Salad',
+          short_name: 'Salad',
           cuisines: ['Italian', 'Mexican'],
           rating: 5,
           delivery_time: 25,
