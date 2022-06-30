@@ -4,6 +4,7 @@ import { ProductComponent } from './product/product.component';
 import { RestaurantComponent } from './restaurant/restaurant.component';
 import { IonicModule } from '@ionic/angular';
 import { LoadingRestaurantComponent } from './loading-restaurant/loading-restaurant.component';
+import { EmptyScreenComponent } from './empty-screen/empty-screen.component';
 
 
 
@@ -11,7 +12,8 @@ import { LoadingRestaurantComponent } from './loading-restaurant/loading-restaur
   declarations: [
     ProductComponent,
     RestaurantComponent,
-    LoadingRestaurantComponent 
+    LoadingRestaurantComponent,
+    EmptyScreenComponent 
   ],
   imports: [
     CommonModule,
@@ -20,7 +22,8 @@ import { LoadingRestaurantComponent } from './loading-restaurant/loading-restaur
   exports: [
     ProductComponent,
     RestaurantComponent,
-    LoadingRestaurantComponent  
+    LoadingRestaurantComponent,
+    EmptyScreenComponent   
   ]
 })
 export class ComponentsModule { }
